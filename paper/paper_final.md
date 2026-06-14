@@ -402,7 +402,7 @@ The future work that follows directly from these limitations is: (i) a **natural
 
 **Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
-**Data and Code Availability.** The maktaba-web-local system and the deterministic experiment scripts used to produce all reported results are released publicly for reproduction. The evaluation corpus consists of user-owned books; because the system is on-device and privacy-preserving, the released artifact provides the scripts and configuration needed to reproduce the methodology on a comparable corpus rather than redistributing private library content.
+**Data and Code Availability.** The maktaba-web-local system and the deterministic experiment scripts used to produce all reported results are released publicly for reproduction. The evaluation corpus consists of user-owned books; because the system is on-device and privacy-preserving, the released artifact provides the scripts and configuration needed to reproduce the methodology on a comparable corpus rather than redistributing private library content. The public repository is at https://github.com/aymnkadymy-hub/maktaba-web-local, archived at Zenodo (concept DOI, all versions): https://doi.org/10.5281/zenodo.20688577.
 
 ---
 

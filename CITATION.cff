@@ -8,7 +8,7 @@ authors:
     orcid: "https://orcid.org/0009-0006-7409-9367"
     affiliation: "Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq"
     email: "ai25009@student.alsafwa.edu.iq"
-version: "v1.0.0"
+version: "v1.0.1"
 date-released: "2026-06-14"
 repository-code: "https://github.com/aymnkadymy-hub/maktaba-web-local"
 url: "https://github.com/aymnkadymy-hub/maktaba-web-local"
@@ -20,10 +20,10 @@ keywords:
   - on-device RAG
   - multilingual information retrieval
   - Arabic NLP
-# identifiers:   # ← uncomment and fill once the Zenodo DOI is minted (see MAKTABA_BUILD_INFO.md)
-#   - type: doi
-#     value: "<<MAKTABA_ZENODO_DOI>>"
-#     description: "Concept DOI (all versions) of the software on Zenodo"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20688577"
+    description: "Concept DOI (all versions) of the software on Zenodo"
 preferred-citation:
   type: article
   title: "Self-Calibrating Per-Tenant Relevance Gating with a Conditional Cross-Lingual Fallback for Offline Multilingual RAG"

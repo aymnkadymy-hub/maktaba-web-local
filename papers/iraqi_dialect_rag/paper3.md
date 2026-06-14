@@ -169,7 +169,7 @@ We presented a deterministic, post-hoc, model-agnostic layer that rewrites MSA l
 
 **Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
-**Data and Code Availability.** The `maktaba-web-local` system and the deterministic experiment script (`exp_p3_dialect.py`) that regenerates Table 1 and the coverage/stability checks are released openly and reproduce from a pinned commit. The substitution map is distributed with the system; the IADD and IA2D source datasets are available from their original authors [17, 5].
+**Data and Code Availability.** The `maktaba-web-local` system and the deterministic experiment script (`exp_p3_dialect.py`) that regenerates Table 1 and the coverage/stability checks are released openly and reproduce from a pinned commit. The substitution map is distributed with the system; the IADD and IA2D source datasets are available from their original authors [17, 5]. The public repository is at https://github.com/aymnkadymy-hub/maktaba-web-local, archived at Zenodo (concept DOI, all versions): https://doi.org/10.5281/zenodo.20688577.
 
 ---
 

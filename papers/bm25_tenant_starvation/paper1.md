@@ -278,7 +278,7 @@ We identified, named, and quantified *sparse-retrieval tenant starvation*: a sha
 
 **Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
-**Data and Code Availability.** The `maktaba-web-local` system and the deterministic experiment scripts (`exp_p1_starvation.py`, `exp_p1b_ablation.py`, `exp_p1c_dense.py`) that regenerate every table and figure from a pinned commit are released openly. Results are deterministic under the five fixed seeds used for the dominance sub-sampling; a reader pointing the script at the same corpus obtains the same curves. Because tenant corpora are private user content, the artifact provides the scripts and configuration to reproduce the methodology on a comparable corpus rather than redistributing private library content.
+**Data and Code Availability.** The `maktaba-web-local` system and the deterministic experiment scripts (`exp_p1_starvation.py`, `exp_p1b_ablation.py`, `exp_p1c_dense.py`) that regenerate every table and figure from a pinned commit are released openly. Results are deterministic under the five fixed seeds used for the dominance sub-sampling; a reader pointing the script at the same corpus obtains the same curves. Because tenant corpora are private user content, the artifact provides the scripts and configuration to reproduce the methodology on a comparable corpus rather than redistributing private library content. The public repository is at https://github.com/aymnkadymy-hub/maktaba-web-local, archived at Zenodo (concept DOI, all versions): https://doi.org/10.5281/zenodo.20688577.
 
 ---
 

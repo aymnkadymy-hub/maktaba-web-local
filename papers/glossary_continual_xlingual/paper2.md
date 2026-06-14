@@ -223,7 +223,7 @@ We presented a self-extending bilingual glossary for offline cross-script retrie
 
 **Funding.** This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
-**Data and Code Availability.** The `maktaba-web-local` system and the deterministic experiment scripts (`exp_p2_glossary.py`, `exp_p2b_ablation.py`, `exp_p2c_labse.py`) that regenerate Tables 1–3 are released openly; results reproduce from a pinned commit. Because library contents are private user data, the artifact provides the scripts, the glossary, and the labelled query set needed to reproduce the methodology on a comparable corpus rather than redistributing private content.
+**Data and Code Availability.** The `maktaba-web-local` system and the deterministic experiment scripts (`exp_p2_glossary.py`, `exp_p2b_ablation.py`, `exp_p2c_labse.py`) that regenerate Tables 1–3 are released openly; results reproduce from a pinned commit. Because library contents are private user data, the artifact provides the scripts, the glossary, and the labelled query set needed to reproduce the methodology on a comparable corpus rather than redistributing private content. The public repository is at https://github.com/aymnkadymy-hub/maktaba-web-local, archived at Zenodo (concept DOI, all versions): https://doi.org/10.5281/zenodo.20688577.
 
 ---
 

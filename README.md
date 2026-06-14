@@ -2,6 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 [![Paper: CC BY 4.0](https://img.shields.io/badge/Paper-CC%20BY%204.0-blue.svg)](paper/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20688577.svg)](https://doi.org/10.5281/zenodo.20688577)
+
+> 📄 Archived release & dataset-free reproduction artifact: https://doi.org/10.5281/zenodo.20688577
 
 A **fully offline, on-device, privacy-preserving, multilingual (Arabic + English) personal digital library** with retrieval-augmented question answering. You give it your own PDFs; it answers your questions **from your books** — and, crucially, it knows **when it does *not* know** and declines to invent an answer. Everything runs locally: no cloud, no telemetry, nothing leaves the machine.
 
