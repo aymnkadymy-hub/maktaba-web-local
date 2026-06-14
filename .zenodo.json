@@ -1,0 +1,27 @@
+{
+  "title": "maktaba-web-local — The Speaking Library (المكتبة الناطقة): offline multilingual RAG with a label-free per-tenant relevance gate",
+  "upload_type": "software",
+  "description": "<p>A fully offline, on-device, privacy-preserving, multilingual (Arabic + English) personal digital library with retrieval-augmented question answering. Its central contribution is an unsupervised, label-free, per-tenant <em>self-calibrating relevance gate</em>. This archive bundles the system code and four research artifacts: the flagship paper (per-tenant relevance gating with a conditional cross-lingual fallback) and three companion papers on (1) sparse-retrieval multi-tenant starvation and a per-tenant sub-index remedy, (2) a self-extending bilingual glossary for continual, label-free cross-script retrieval, and (3) safe deterministic post-hoc Modern-Standard-Arabic&rarr;Iraqi dialect rewriting. Every reported number is produced by deterministic experiment scripts included under <code>papers/experiments/</code> and <code>paper_experiments/</code>. The private evaluation corpus (user-owned books) is not redistributed.</p>",
+  "creators": [
+    {
+      "name": "Yousef, Ayman Kazim",
+      "orcid": "0009-0006-7409-9367",
+      "affiliation": "Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "retrieval-augmented generation",
+    "information retrieval",
+    "multi-tenant retrieval",
+    "BM25",
+    "cross-lingual information retrieval",
+    "continual learning",
+    "Arabic natural language processing",
+    "Iraqi dialect",
+    "offline / on-device AI",
+    "relevance calibration"
+  ],
+  "notes": "Code is MIT-licensed; the papers (paper/ and papers/) are CC BY 4.0. Replace the GitHub URL placeholders in CITATION.cff and the papers' Data & Code Availability sections after the repository is published."
+}

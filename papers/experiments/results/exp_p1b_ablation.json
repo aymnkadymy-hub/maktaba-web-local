@@ -1,0 +1,14 @@
+{
+  "n_probes": 18,
+  "k": 5,
+  "overlap_deployed_F90": 0.4611,
+  "overlap_global_Finf_no_crowding": 0.8556,
+  "overlap_per_user": 1.0,
+  "crowding_effect": 0.3944,
+  "statistics_capture_effect": 0.1444,
+  "interpretation": "loss decomposes: removing the over-fetch cutoff (crowding) recovers `crowding_effect`; the residual gap to 1.0 is shared-IDF statistics capture",
+  "overlap_deployed_F90_ci95": [
+    0.35,
+    0.5778
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "model": "AMR-KELEG/Sentence-ALDi",
+  "n_sentences": 15,
+  "mean_aldi_before": 0.5528,
+  "mean_aldi_after": 0.4898,
+  "mean_delta": -0.063,
+  "median_delta": -0.0771,
+  "n_sentences_dialectness_increased": 2,
+  "per_sentence": [
+    {
+      "msa": "الآن لا يوجد كثير من الوقت لكن كل شيء جيد",
+      "iraqi": "هسه ماكو هواية من الوقت بس كلشي زين",
+      "aldi_before": 0.662,
+      "aldi_after": 0.53
+    },
+    {
+      "msa": "ماذا تريد أن تفعل اليوم",
+      "iraqi": "شنو تريد أن تفعل اليوم",
+      "aldi_before": 0.354,
+      "aldi_after": 0.363
+    },
+    {
+      "msa": "كيف حالك يا صديقي",
+      "iraqi": "شلونك يا صاحبي",
+      "aldi_before": 0.46,
+      "aldi_after": 0.322
+    },
+    {
+      "msa": "هذا الكلام صحيح تماماً وأنا أفهم الفكرة",
+      "iraqi": "هذا الكلام صح گاع وأنا أباوع الفكرة",
+      "aldi_before": 0.493,
+      "aldi_after": 0.594
+    },
+    {
+      "msa": "سوف يتم شرح الموضوع",
+      "iraqi": "راح يصير شرح الموضوع",
+      "aldi_before": 0.62,
+      "aldi_after": 0.565
+    },
+    {
+      "msa": "دعنا نبدأ من البداية",
+      "iraqi": "خلنا نبدأ من البداية",
+      "aldi_before": 0.632,
+      "aldi_after": 0.588
+    },
+    {
+      "msa": "المعلم يشير إلى أن المتغير مهم جداً",
+      "iraqi": "المعلم يگول إلى أن المتغير مهم كلش",
+      "aldi_before": 0.922,
+      "aldi_after": 0.898
+    },
+    {
+      "msa": "أين الكتاب الذي تتحدث عنه",
+      "iraqi": "وين الكتاب الذي تحچي عنه",
+      "aldi_before": 0.271,
+      "aldi_after": 0.278
+    },
+    {
+      "msa": "ربما يكون هذا جيداً ولكن ليس دائماً",
+      "iraqi": "بلكي يكون هذا زين بس مو دائماً",
+      "aldi_before": 0.614,
+      "aldi_after": 0.534
+    },
+    {
+      "msa": "أيضاً يوجد حل آخر للمسألة",
+      "iraqi": "هم أكو حل آخر للمسألة",
+      "aldi_before": 0.317,
+      "aldi_after": 0.046
+    },
+    {
+      "msa": "نحن نتكلم عن البرمجة الآن",
+      "iraqi": "احنا نحچي عن البرمجة هسه",
+      "aldi_before": 0.392,
+      "aldi_after": 0.278
+    },
+    {
+      "msa": "أنا فهمت الدرس جيداً",
+      "iraqi": "اني باوعت الدرس زين",
+      "aldi_before": 0.186,
+      "aldi_after": 0.273
+    },
+    {
+      "msa": "رائع، هذا ممتاز",
+      "iraqi": "كلش حلو، هذا كلش زين",
+      "aldi_before": 0.892,
+      "aldi_after": 0.795
+    },
+    {
+      "msa": "كثيراً ما نرى هذا في الاقتصاد",
+      "iraqi": "هواية ما نرى هذا في الاقتصاد",
+      "aldi_before": 0.865,
+      "aldi_after": 0.788
+    },
+    {
+      "msa": "بالطبع المعادلة تعدّ من أهم المفاهيم",
+      "iraqi": "أكيد المعادلة تعدّ من أهم المفاهيم",
+      "aldi_before": 0.612,
+      "aldi_after": 0.492
+    }
+  ],
+  "note": "Automatic dialectness (ALDi: 0=MSA, 1=dialectal). NEGATIVE RESULT: mean ALDi is flat-to-slightly-LOWER after rewriting (0.55->0.49) and most Iraqi rewrites are not scored as more dialectal -- even clearly-Iraqi outputs like 'شلونك يا صاحبي'. ALDi was trained on Egyptian/Levantine/Gulf data (AOC) WITHOUT Iraqi, so it does not register Iraqi markers (هسه/ماكو/شلونك/گاع) as dialectal. This is a result about the METRIC, not the rewriter: no off-the-shelf automatic dialectness metric validly covers Iraqi, which (a) reinforces Iraqi's low-resource status and (b) confirms a blind human evaluation by Iraqi speakers is the necessary dialect-quality measure -- the paper's stated principal gap."
+}

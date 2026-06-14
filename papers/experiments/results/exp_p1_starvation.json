@@ -1,0 +1,189 @@
+{
+  "corpus": {
+    "total_entries": 3838,
+    "tenants": {
+      "3CLDpsvv7RhtClg5iqhr-g": 3725,
+      "zOtwWhrLIlaRbhGH4852FA": 58,
+      "null": 55
+    },
+    "dominant_tenant": "3CLDpsvv7RhtClg5iqhr-g",
+    "dominant_chunks": 3725,
+    "minority_tenant": "zOtwWhrLIlaRbhGH4852FA",
+    "minority_chunks": 58,
+    "dominance_excl_null": 0.9847,
+    "dominance_incl_null": 0.9706
+  },
+  "config": {
+    "k": 5,
+    "seed": 0,
+    "df_min_shared": 30,
+    "n_distinct_queries": 58,
+    "n_shared_queries": 18
+  },
+  "per_user_recall_at_k": {
+    "distinct_vocab": 1.0,
+    "shared_common_vocab": 1.0
+  },
+  "expA_recall_vs_dominance": {
+    "over_fetch_multiple": 18,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "by_probeset": {
+      "distinct_vocab": [
+        {
+          "dominance": 0.5,
+          "nA": 58,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.741,
+          "oracle_overlap_at_k": 0.9676
+        },
+        {
+          "dominance": 0.8,
+          "nA": 232,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.741,
+          "oracle_overlap_at_k": 0.9393
+        },
+        {
+          "dominance": 0.9,
+          "nA": 522,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.741,
+          "oracle_overlap_at_k": 0.9297
+        },
+        {
+          "dominance": 0.95,
+          "nA": 1102,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.724,
+          "oracle_overlap_at_k": 0.9241
+        },
+        {
+          "dominance": 0.98,
+          "nA": 2842,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.686,
+          "oracle_overlap_at_k": 0.9172
+        },
+        {
+          "dominance": 0.9847,
+          "nA": 3725,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.672,
+          "oracle_overlap_at_k": 0.9138
+        }
+      ],
+      "shared_common_vocab": [
+        {
+          "dominance": 0.5,
+          "nA": 58,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.722,
+          "oracle_overlap_at_k": 0.9133
+        },
+        {
+          "dominance": 0.8,
+          "nA": 232,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 4.333,
+          "oracle_overlap_at_k": 0.8333
+        },
+        {
+          "dominance": 0.9,
+          "nA": 522,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 3.533,
+          "oracle_overlap_at_k": 0.7067
+        },
+        {
+          "dominance": 0.95,
+          "nA": 1102,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 3.111,
+          "oracle_overlap_at_k": 0.6311
+        },
+        {
+          "dominance": 0.98,
+          "nA": 2842,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 2.289,
+          "oracle_overlap_at_k": 0.4833
+        },
+        {
+          "dominance": 0.9847,
+          "nA": 3725,
+          "global_recall_at_k": 1.0,
+          "global_zero_yield_rate": 0.0,
+          "mean_B_yield": 2.111,
+          "oracle_overlap_at_k": 0.4611
+        }
+      ]
+    }
+  },
+  "expB_recall_vs_overfetch_full_dominance": [
+    {
+      "over_fetch_multiple": 1,
+      "global_fetch_F": 5,
+      "global_recall_at_k": 0.8889,
+      "global_zero_yield_rate": 0.1111
+    },
+    {
+      "over_fetch_multiple": 3,
+      "global_fetch_F": 15,
+      "global_recall_at_k": 0.9444,
+      "global_zero_yield_rate": 0.0556
+    },
+    {
+      "over_fetch_multiple": 6,
+      "global_fetch_F": 30,
+      "global_recall_at_k": 1.0,
+      "global_zero_yield_rate": 0.0
+    },
+    {
+      "over_fetch_multiple": 18,
+      "global_fetch_F": 90,
+      "global_recall_at_k": 1.0,
+      "global_zero_yield_rate": 0.0
+    },
+    {
+      "over_fetch_multiple": 50,
+      "global_fetch_F": 250,
+      "global_recall_at_k": 1.0,
+      "global_zero_yield_rate": 0.0
+    },
+    {
+      "over_fetch_multiple": 100,
+      "global_fetch_F": 500,
+      "global_recall_at_k": 1.0,
+      "global_zero_yield_rate": 0.0
+    }
+  ],
+  "expC_global_rank_of_target": {
+    "n_found": 18,
+    "n_total": 18,
+    "median_global_rank": 1,
+    "p90_global_rank": 13,
+    "max_global_rank": 25,
+    "frac_beyond_deployed_F": 0.0
+  },
+  "latency_ms": {
+    "per_user_index_build_minority": 2.68,
+    "note": "global index already resident; per-user built lazily once per tenant, cached"
+  }
+}

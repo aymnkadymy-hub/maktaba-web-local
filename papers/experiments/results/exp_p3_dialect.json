@@ -1,0 +1,117 @@
+{
+  "regression": {
+    "particle_list_size": 21,
+    "siin_list_size": 18,
+    "deployed_particle_corruptions": 0,
+    "deployed_siin_corruptions": 0,
+    "naive_particle_corruptions": 21,
+    "naive_siin_corruptions": 10,
+    "naive_particle_examples": {
+      "الاقتصاد": "ا لا قتصاد",
+      "المعلومات": "ال مع لومات",
+      "الفهم": "ال فهم",
+      "العلاقة": "ال ع لا قة",
+      "المعرفة": "ال مع رفة",
+      "الفلسفة": "ال فلسفة"
+    },
+    "naive_siin_examples": {
+      "سيارة": "راح يارة",
+      "سياسة": "راح ياسة",
+      "سنوات": "راح نوات",
+      "ستيفن": "راح تيفن",
+      "سياق": "راح ياق",
+      "سينما": "راح ينما"
+    },
+    "documented_historical": {
+      "particle": "17/21",
+      "siin": "14/18",
+      "source": "backend/dialect/dialect_processor.py comments (lines 41-46, 72-76)"
+    }
+  },
+  "coverage": {
+    "n_sentences": 15,
+    "sentences_changed": 15,
+    "sentence_change_rate": 1.0,
+    "approx_tokens_total": 82,
+    "approx_tokens_changed": 44,
+    "approx_token_change_rate": 0.5366,
+    "examples": [
+      {
+        "msa": "الآن لا يوجد كثير من الوقت لكن كل شيء جيد",
+        "iraqi": "هسه ماكو هواية من الوقت بس كلشي زين"
+      },
+      {
+        "msa": "ماذا تريد أن تفعل اليوم",
+        "iraqi": "شنو تريد أن تفعل اليوم"
+      },
+      {
+        "msa": "كيف حالك يا صديقي",
+        "iraqi": "شلونك يا صاحبي"
+      },
+      {
+        "msa": "هذا الكلام صحيح تماماً وأنا أفهم الفكرة",
+        "iraqi": "هذا الكلام صح گاع وأنا أباوع الفكرة"
+      },
+      {
+        "msa": "سوف يتم شرح الموضوع",
+        "iraqi": "راح يصير شرح الموضوع"
+      },
+      {
+        "msa": "دعنا نبدأ من البداية",
+        "iraqi": "خلنا نبدأ من البداية"
+      },
+      {
+        "msa": "المعلم يشير إلى أن المتغير مهم جداً",
+        "iraqi": "المعلم يگول إلى أن المتغير مهم كلش"
+      },
+      {
+        "msa": "أين الكتاب الذي تتحدث عنه",
+        "iraqi": "وين الكتاب الذي تحچي عنه"
+      },
+      {
+        "msa": "ربما يكون هذا جيداً ولكن ليس دائماً",
+        "iraqi": "بلكي يكون هذا زين بس مو دائماً"
+      },
+      {
+        "msa": "أيضاً يوجد حل آخر للمسألة",
+        "iraqi": "هم أكو حل آخر للمسألة"
+      },
+      {
+        "msa": "بالطبع المعادلة تعدّ من أهم المفاهيم",
+        "iraqi": "أكيد المعادلة تعدّ من أهم المفاهيم"
+      },
+      {
+        "msa": "نحن نتكلم عن البرمجة الآن",
+        "iraqi": "احنا نحچي عن البرمجة هسه"
+      },
+      {
+        "msa": "أنا فهمت الدرس جيداً",
+        "iraqi": "اني باوعت الدرس زين"
+      },
+      {
+        "msa": "رائع، هذا ممتاز",
+        "iraqi": "كلش حلو، هذا كلش زين"
+      },
+      {
+        "msa": "كثيراً ما نرى هذا في الاقتصاد",
+        "iraqi": "هواية ما نرى هذا في الاقتصاد"
+      }
+    ]
+  },
+  "idempotence": {
+    "n_sentences": 15,
+    "non_idempotent": 0,
+    "idempotent": true
+  },
+  "code_preservation": {
+    "n": 2,
+    "all_preserved": true
+  },
+  "map_stats": {
+    "map_entries": 321,
+    "multiword_keys": 129,
+    "max_key_len_words": 3,
+    "morph_rules": 22,
+    "spacing_rules": 2
+  }
+}

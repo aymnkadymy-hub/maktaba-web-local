@@ -1,0 +1,80 @@
+{
+  "0.0": {
+    "acc": 0.6416666666666667,
+    "prec": 0.5825242718446602,
+    "rec": 1.0,
+    "f1": 0.7361963190184049,
+    "cutoffs": {
+      "T1 EN ML/AI-search": -7.44,
+      "T2 EN economics/publishing": -7.17,
+      "T3 AR + math": -5.65,
+      "T4 Mixed AR+EN": -5.38,
+      "T5 STEM/electronics": -7.89
+    }
+  },
+  "0.1": {
+    "acc": 0.8166666666666667,
+    "prec": 0.7317073170731707,
+    "rec": 1.0,
+    "f1": 0.8450704225352113,
+    "cutoffs": {
+      "T1 EN ML/AI-search": -5.64,
+      "T2 EN economics/publishing": -5.41,
+      "T3 AR + math": -4.03,
+      "T4 Mixed AR+EN": -3.79,
+      "T5 STEM/electronics": -6.05
+    }
+  },
+  "0.25": {
+    "acc": 0.9666666666666667,
+    "prec": 0.9375,
+    "rec": 1.0,
+    "f1": 0.967741935483871,
+    "cutoffs": {
+      "T1 EN ML/AI-search": -2.93,
+      "T2 EN economics/publishing": -2.75,
+      "T3 AR + math": -1.59,
+      "T4 Mixed AR+EN": -1.39,
+      "T5 STEM/electronics": -3.29
+    }
+  },
+  "0.5": {
+    "acc": 0.9916666666666667,
+    "prec": 0.9836065573770492,
+    "rec": 1.0,
+    "f1": 0.9917355371900827,
+    "cutoffs": {
+      "T1 EN ML/AI-search": 1.58,
+      "T2 EN economics/publishing": 1.67,
+      "T3 AR + math": 2.0,
+      "T4 Mixed AR+EN": 2.0,
+      "T5 STEM/electronics": 1.31
+    }
+  },
+  "0.75": {
+    "acc": 0.9916666666666667,
+    "prec": 0.9836065573770492,
+    "rec": 1.0,
+    "f1": 0.9917355371900827,
+    "cutoffs": {
+      "T1 EN ML/AI-search": 2.0,
+      "T2 EN economics/publishing": 2.0,
+      "T3 AR + math": 2.0,
+      "T4 Mixed AR+EN": 2.0,
+      "T5 STEM/electronics": 2.0
+    }
+  },
+  "1.0": {
+    "acc": 0.9916666666666667,
+    "prec": 0.9836065573770492,
+    "rec": 1.0,
+    "f1": 0.9917355371900827,
+    "cutoffs": {
+      "T1 EN ML/AI-search": 2.0,
+      "T2 EN economics/publishing": 2.0,
+      "T3 AR + math": 2.0,
+      "T4 Mixed AR+EN": 2.0,
+      "T5 STEM/electronics": 2.0
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "corpus": {
+    "tenant": "3CLDpsvv7RhtClg5iqhr-g",
+    "n_chunks": 3725,
+    "books": [
+      "01_Physics-33-43",
+      "100 Q&A About Scientific Publishing - Beginner's Guide",
+      "AI_Search_Algorithms_100_Questions",
+      "AI_Search_Algorithms_100_Questions_Only",
+      "Cybersecurity_Fundamentals",
+      "Database_Systems_Guide",
+      "Freakonomics",
+      "generative-deep-learning-teaching-machines-to-paint-write-compose-and-play",
+      "اساسيات البرمجة",
+      "الكسور الجزئيه"
+    ]
+  },
+  "config": {
+    "k": 10,
+    "glossary_ar_en": 308,
+    "glossary_en_ar": 280
+  },
+  "static_glossary": {
+    "AR_to_EN": {
+      "n": 6,
+      "recall_without_glossary": 0.0,
+      "recall_with_glossary": 1.0,
+      "rows": [
+        {
+          "query": "الشبكة العصبية التوليدية",
+          "target": "generative-deep-learning",
+          "hit_without": false,
+          "hit_with": true,
+          "expansion": "neural network network neural"
+        },
+        {
+          "query": "فرط التخصيص في الشبكة العصبية",
+          "target": "generative-deep-learning",
+          "hit_without": false,
+          "hit_with": true,
+          "expansion": "neural network overfitting network neural"
+        },
+        {
+          "query": "خوارزمية البحث",
+          "target": "AI_Search_Algorithms",
+          "hit_without": false,
+          "hit_with": true,
+          "expansion": "algorithm search"
+        },
+        {
+          "query": "الحوافز الاقتصادية",
+          "target": "Freakonomics",
+          "hit_without": false,
+          "hit_with": true,
+          "expansion": "incentives"
+        },
+        {
+          "query": "النشر العلمي ومعامل التأثير",
+          "target": "100 Q&A About Scientific Publishing",
+          "hit_without": false,
+          "hit_with": true,
+          "expansion": "scientific publishing impact factor publishing publication operator parameter"
+        },
+        {
+          "query": "التحكيم والسرقة الادبية",
+          "target": "100 Q&A About Scientific Publishing",
+          "hit_without": false,
+          "hit_with": true,
+          "expansion": "plagiarism peer review"
+        }
+      ]
+    },
+    "EN_to_AR": {
+      "n": 3,
+      "recall_without_glossary": 1.0,
+      "recall_with_glossary": 1.0,
+      "rows": [
+        {
+          "query": "partial fractions",
+          "target": "الكسور الجزئيه",
+          "hit_without": true,
+          "hit_with": true,
+          "expansion": "كسور جزئيه كسور"
+        },
+        {
+          "query": "programming variable and function",
+          "target": "اساسيات البرمجة",
+          "hit_without": true,
+          "hit_with": true,
+          "expansion": "برمجه متغير داله"
+        },
+        {
+          "query": "loop and array in programming",
+          "target": "اساسيات البرمجة",
+          "hit_without": true,
+          "hit_with": true,
+          "expansion": "حلقه مصفوفه برمجه"
+        }
+      ]
+    },
+    "overall": {
+      "n": 9,
+      "recall_without_glossary": 0.3333,
+      "recall_with_glossary": 1.0
+    }
+  },
+  "continual_learning": {
+    "n_heldout": 3,
+    "recall_before_learning": 0.0,
+    "recall_after_learning": 1.0,
+    "detail": {
+      "absent_confirmed": [
+        {
+          "term": "الانتروبيا",
+          "absent_from_static": true
+        },
+        {
+          "term": "الكامن",
+          "absent_from_static": true
+        },
+        {
+          "term": "اللوجستي",
+          "absent_from_static": true
+        }
+      ],
+      "before": [
+        {
+          "term": "الانتروبيا",
+          "hit": false
+        },
+        {
+          "term": "الكامن",
+          "hit": false
+        },
+        {
+          "term": "اللوجستي",
+          "hit": false
+        }
+      ],
+      "after": [
+        {
+          "term": "الانتروبيا",
+          "hit": true,
+          "expansion": "entropy"
+        },
+        {
+          "term": "الكامن",
+          "hit": true,
+          "expansion": "latent"
+        },
+        {
+          "term": "اللوجستي",
+          "hit": true,
+          "expansion": "logistic"
+        }
+      ]
+    }
+  }
+}

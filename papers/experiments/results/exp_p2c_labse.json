@@ -1,0 +1,31 @@
+{
+  "corpus": {
+    "tenant": "3CLDpsvv7RhtClg5iqhr-g",
+    "n_chunks": 3725
+  },
+  "k": 10,
+  "bm25_reference": {
+    "AR_to_EN_no_glossary": 0.0,
+    "AR_to_EN_with_glossary": 1.0,
+    "source": "exp_p2_glossary.json"
+  },
+  "models": {
+    "paraphrase-multilingual-MiniLM-L12-v2": {
+      "desc": "small (~118M, deployed on-device encoder)",
+      "dim": 384,
+      "AR_to_EN_dense_recall_at_10": 1.0,
+      "EN_to_AR_dense_recall_at_10": 1.0,
+      "query_embed_ms_median": 16.19,
+      "corpus_embed_seconds": 92.1
+    },
+    "LaBSE": {
+      "desc": "heavy (~471M, ~1.8GB)",
+      "dim": 768,
+      "AR_to_EN_dense_recall_at_10": 1.0,
+      "EN_to_AR_dense_recall_at_10": 1.0,
+      "query_embed_ms_median": 21.91,
+      "corpus_embed_seconds": 453.1
+    }
+  },
+  "note": "Dense multilingual encoders cross scripts via a shared embedding space. The comparison is cost/accuracy, not a SOTA race: BM25+glossary reaches AR->EN 1.0 at ~48us/query with no model, complementing the small deployed encoder; LaBSE is a 1.8GB model. We report whatever recall each achieves."
+}

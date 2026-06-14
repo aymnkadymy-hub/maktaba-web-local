@@ -1,0 +1,21 @@
+class _MSG:
+    TOO_LONG        = lambda n: f"الرسالة طويلة جداً (الحد الأقصى {n} حرف)"
+    RATE_CHAT       = lambda n: f"تجاوزت الحد الأقصى ({n} رسالة/دقيقة). حاول بعد قليل."
+    RATE_REGISTER   = "تجاوزت حد محاولات التسجيل. حاول بعد ساعة."
+    NOT_PDF         = "الملف يجب أن يكون PDF"
+    BAD_PDF_MAGIC   = "الملف ليس PDF صحيح — magic bytes غير مطابقة"
+    BODY_TOO_LARGE  = "الطلب كبير جداً"
+    NOT_IMAGE       = "الملف يجب أن يكون صورة"
+    IMAGE_TOO_LARGE = "حجم الصورة يتجاوز 20 MB"
+    ADMIN_ONLY      = "هذا الإجراء محصور بالمشرف فقط"
+    SESSION_DENIED  = "غير مصرح للوصول لهذه الجلسة"
+    STREAM_TIMEOUT  = "انتهت مهلة الاستجابة — Ollama لم يرد خلال 120 ثانية"
+    CIRCUIT_OPEN    = "الخادم مشغول مؤقتاً — حاول بعد 30 ثانية"
+    DUPLICATE_MSG   = "رسالة مكررة — انتظر لحظة قبل الإرسال مجدداً"
+    # Exception details stay in server logs only — responses get a generic
+    # message so internals (paths, hosts, stack info) never leak to clients.
+    LLM_ERROR       = lambda e=None: "خطأ تقني أثناء معالجة الطلب — حاول مرة أخرى"
+    INGEST_FAILED   = lambda e=None: "فشل استيعاب الكتاب — تأكد من سلامة الملف وحاول مجدداً"
+    DELETE_FAILED   = lambda e=None: "فشل حذف الكتاب — حاول مرة أخرى"
+    IMG_FAIL        = lambda e=None: "فشل تحليل الصورة — حاول مرة أخرى"
+    BOOK_NOT_FOUND  = lambda t: f"الكتاب '{t}' غير موجود في المكتبة"

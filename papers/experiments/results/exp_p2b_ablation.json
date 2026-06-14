@@ -1,0 +1,33 @@
+{
+  "n_queries": 6,
+  "k": 10,
+  "glossary_full_size": 308,
+  "rows": [
+    {
+      "glossary_fraction": 0.0,
+      "entries": 0,
+      "ar_to_en_recall_at_10": 0.0
+    },
+    {
+      "glossary_fraction": 0.25,
+      "entries": 77,
+      "ar_to_en_recall_at_10": 0.8333
+    },
+    {
+      "glossary_fraction": 0.5,
+      "entries": 154,
+      "ar_to_en_recall_at_10": 0.8333
+    },
+    {
+      "glossary_fraction": 0.75,
+      "entries": 231,
+      "ar_to_en_recall_at_10": 1.0
+    },
+    {
+      "glossary_fraction": 1.0,
+      "entries": 308,
+      "ar_to_en_recall_at_10": 1.0
+    }
+  ],
+  "note": "AR->EN cross-script book-level recall@10 vs fraction of the static glossary present (length-sorted prefix). 0% = no expansion (lexical cross-script floor)."
+}

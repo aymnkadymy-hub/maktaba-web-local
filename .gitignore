@@ -1,0 +1,54 @@
+# ---- Private user data — NEVER commit ----
+books/
+*.pdf
+!paper/*.pdf
+!papers/*.pdf
+!papers/**/*.pdf
+qdrant_data/
+bm25_cache/
+snapshots/
+data/
+logs/
+*.db
+*.db-wal
+*.db-shm
+ingestion_ledger.json
+
+# ---- Secrets ----
+.env
+.env.local
+.env.*
+*.key
+keystore*
+
+# ---- Models / large binaries ----
+*.onnx
+*.gguf
+*.pyd
+*.so
+onnxruntime_sdk/
+native_engine/build/
+native_engine/build_win/
+cloudflared*
+
+# ---- Third-party dialect datasets (reference, do not redistribute) ----
+backend/dialect/IADD/
+backend/dialect/IA2D/
+
+# ---- Python / venv / caches ----
+.venv/
+.venv_win/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# ---- Patent / internal ----
+PATENT_DISCLOSURE.md
+patent_figures/
+
+# ---- OS / editor ----
+.DS_Store
+*.bak
+.qdrant-initialized

@@ -1,0 +1,46 @@
+{
+  "n_probes": 18,
+  "k": 5,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+  "dense_per_user_overlap_at_k": 1.0,
+  "rows": [
+    {
+      "dominance": 0.5,
+      "nA": 58,
+      "dense_postfilter8x_overlap_at_k": 1.0
+    },
+    {
+      "dominance": 0.8,
+      "nA": 232,
+      "dense_postfilter8x_overlap_at_k": 0.9956
+    },
+    {
+      "dominance": 0.9,
+      "nA": 522,
+      "dense_postfilter8x_overlap_at_k": 0.8622
+    },
+    {
+      "dominance": 0.95,
+      "nA": 1102,
+      "dense_postfilter8x_overlap_at_k": 0.6844
+    },
+    {
+      "dominance": 0.98,
+      "nA": 2842,
+      "dense_postfilter8x_overlap_at_k": 0.36
+    },
+    {
+      "dominance": 0.9847,
+      "nA": 3725,
+      "dense_postfilter8x_overlap_at_k": 0.3222
+    }
+  ],
+  "note": "MEASURED, and it refutes a naive 'dense does not starve' claim: dense post-filter (8x over-fetch) overlap@5 ALSO collapses with dominance (1.0 -> 0.32 at the real 98.5%), in fact below the sparse path's 0.46 (which used a larger 18x over-fetch). Crowding -- the global top-N being committed BEFORE the tenant post-filter -- affects BOTH sparse and dense post-filtering. Cosine's corpus-composition-independence removes only the sparse-only IDF statistics-capture term (+0.14, exp_p1b), NOT crowding. The genuine asymmetry is structural: dense ANN can push the predicate INTO traversal (Filtered-DiskANN/ACORN) to eliminate crowding, whereas a shared inverted index has no analogue short of a per-tenant sub-index. The per-tenant sub-index restores overlap to 1.0 on BOTH sides."
+}
