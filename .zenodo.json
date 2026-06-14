@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "maktaba-web-local: Self-Calibrating Per-Tenant Relevance Gating for Offline Multilingual RAG",
-  "version": "v1.0.1",
+  "version": "v1.0.0",
   "access_right": "open",
   "license": "MIT",
   "creators": [
