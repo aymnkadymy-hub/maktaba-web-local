@@ -1,0 +1,30 @@
+\usepackage{fontspec}
+\directlua{luaotfload.add_fallback("arfallback",{"Noto Sans Arabic:mode=harf;","Noto Naskh Arabic:mode=harf;"})}
+\setmainfont{DejaVu Serif}[RawFeature={fallback=arfallback}]
+\setsansfont{DejaVu Sans}[RawFeature={fallback=arfallback}]
+\setmonofont{DejaVu Sans Mono}[RawFeature={fallback=arfallback}]
+% wrap long lines inside code blocks (fvextra reprovides verbatim with breaklines)
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\footnotesize}
+\fvset{breaklines=true,breakanywhere=true}
+% break long URLs/DOIs anywhere so the reference list does not overflow
+\usepackage{xurl}
+% force URL/DOI breaks between ANY two characters (incl. long alphanumeric DOI ids)
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9%
+\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
+\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
+\makeatother
+% smaller font for tables so wide multi-column tables (Tables 11/12) fit and do not collide
+\usepackage{etoolbox}
+\AtBeginEnvironment{longtable}{\small}
+\AtBeginEnvironment{tabular}{\small}
+% allow inline code (\texttt) to wrap at underscores so long script/file names do not overflow
+% (pandoc escapes "_" as "\_"; these appear only inside code, so redefining \_ is safe)
+\renewcommand{\_}{\textunderscore\allowbreak}
+% let LaTeX hyphenate these recurring closed compounds rather than overflow
+\hyphenation{cut-off cut-offs cross-en-co-der re-rank-er}
+% let TeX stretch a line rather than overflow on a long inline \texttt token
+\emergencystretch=3em
+\usepackage{graphicx}
+\usepackage{float}

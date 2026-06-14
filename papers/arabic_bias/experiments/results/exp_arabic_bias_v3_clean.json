@@ -1,0 +1,134 @@
+{
+ "pipeline": "production (fitz + smart_normalize + RecursiveCharacterTextSplitter 500/100)",
+ "provenance": {
+  "live_corpus": 63,
+  "اللغة العربية الهندسة": 89,
+  "بوربوينت مبسط-بي دي": 53,
+  "PDF _مهارات ": 125,
+  "Digital_Logic_Design_Top50_QA_Arabic": 60
+ },
+ "n_arabic": 390,
+ "n_english_balanced": 390,
+ "models": {
+  "cross_encoder": {
+   "arabic": {
+    "n": 390,
+    "mean": 10.251,
+    "median": 10.625,
+    "std": 1.109,
+    "min": -0.214,
+    "max": 10.92
+   },
+   "english": {
+    "n": 390,
+    "mean": 10.502,
+    "median": 10.681,
+    "std": 0.623,
+    "min": 6.013,
+    "max": 10.925
+   },
+   "tests": {
+    "std_ratio_EN_over_AR": 0.562,
+    "bootstrap_std_ratio": {
+     "median": 0.564,
+     "ci95": [
+      0.385,
+      0.822
+     ],
+     "arabic_narrower_sig": false,
+     "arabic_wider_sig": true
+    },
+    "levene_p": 7.992e-05,
+    "fligner_p": 8.665e-09,
+    "mean_gap_EN_minus_AR": 0.251,
+    "bootstrap_mean_gap_ci": [
+     0.129,
+     0.378
+    ],
+    "welch_p": 0.0001112,
+    "arabic_lower_sig": true,
+    "mannwhitney_p": 0.00818
+   }
+  },
+  "cosine_miniLM": {
+   "arabic": {
+    "n": 390,
+    "mean": 0.747,
+    "median": 0.801,
+    "std": 0.182,
+    "min": 0.032,
+    "max": 1.0
+   },
+   "english": {
+    "n": 390,
+    "mean": 0.757,
+    "median": 0.771,
+    "std": 0.114,
+    "min": 0.334,
+    "max": 1.0
+   },
+   "tests": {
+    "std_ratio_EN_over_AR": 0.626,
+    "bootstrap_std_ratio": {
+     "median": 0.626,
+     "ci95": [
+      0.553,
+      0.718
+     ],
+     "arabic_narrower_sig": false,
+     "arabic_wider_sig": true
+    },
+    "levene_p": 3.138e-05,
+    "fligner_p": 0.008404,
+    "mean_gap_EN_minus_AR": 0.009,
+    "bootstrap_mean_gap_ci": [
+     -0.011,
+     0.03
+    ],
+    "welch_p": 0.3956,
+    "arabic_lower_sig": false,
+    "mannwhitney_p": 0.03078
+   }
+  },
+  "cosine_LaBSE": {
+   "arabic": {
+    "n": 390,
+    "mean": 0.697,
+    "median": 0.712,
+    "std": 0.113,
+    "min": 0.192,
+    "max": 1.0
+   },
+   "english": {
+    "n": 390,
+    "mean": 0.663,
+    "median": 0.65,
+    "std": 0.111,
+    "min": 0.406,
+    "max": 1.0
+   },
+   "tests": {
+    "std_ratio_EN_over_AR": 0.985,
+    "bootstrap_std_ratio": {
+     "median": 0.986,
+     "ci95": [
+      0.878,
+      1.109
+     ],
+     "arabic_narrower_sig": false,
+     "arabic_wider_sig": false
+    },
+    "levene_p": 0.433,
+    "fligner_p": 0.2676,
+    "mean_gap_EN_minus_AR": -0.034,
+    "bootstrap_mean_gap_ci": [
+     -0.05,
+     -0.018
+    ],
+    "welch_p": 2.485e-05,
+    "arabic_lower_sig": false,
+    "mannwhitney_p": 1.121e-08
+   }
+  }
+ }
+}

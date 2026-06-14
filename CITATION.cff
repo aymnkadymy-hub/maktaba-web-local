@@ -8,7 +8,7 @@ authors:
     orcid: "https://orcid.org/0009-0006-7409-9367"
     affiliation: "Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq"
     email: "ai25009@student.alsafwa.edu.iq"
-version: "v1.0.2"
+version: "v1.1.0"
 date-released: "2026-06-14"
 repository-code: "https://github.com/aymnkadymy-hub/maktaba-web-local"
 url: "https://github.com/aymnkadymy-hub/maktaba-web-local"
@@ -59,3 +59,11 @@ references:
         orcid: "https://orcid.org/0009-0006-7409-9367"
     year: 2026
     notes: "Companion paper P3 (papers/iraqi_dialect_rag/)."
+  - type: article
+    title: "Algorithmic Bias Against Arabic: A Measurement, and Three Frozen-Model Mitigations, in an Offline Multilingual Retrieval System"
+    authors:
+      - family-names: "Yousef"
+        given-names: "Ayman Kazim"
+        orcid: "https://orcid.org/0009-0006-7409-9367"
+    year: 2026
+    notes: "Companion paper P4 (papers/arabic_bias/)."

@@ -1,0 +1,286 @@
+{
+ "provenance": {
+  "computer_skills_ar": 81,
+  "digital_logic_ar": 55,
+  "eng_arabic_curriculum": 73,
+  "powerpoint2010_alsafwa_ar": 37,
+  "live_corpus_arabic": 63
+ },
+ "n_arabic": 309,
+ "n_english_pool": 1200,
+ "n_english_balanced": 309,
+ "seed": 0,
+ "models": {
+  "cross_encoder": {
+   "self_match_relevant": {
+    "arabic": {
+     "n": 309,
+     "mean": 10.321,
+     "median": 10.647,
+     "std": 0.928,
+     "min": 3.891,
+     "max": 10.906
+    },
+    "english": {
+     "n": 309,
+     "mean": 10.505,
+     "median": 10.681,
+     "std": 0.623,
+     "min": 6.013,
+     "max": 10.925
+    }
+   },
+   "cross_doc_irrelevant": {
+    "arabic": {
+     "n": 309,
+     "mean": -7.278,
+     "median": -7.428,
+     "std": 1.688,
+     "min": -10.469,
+     "max": -1.531
+    },
+    "english": {
+     "n": 309,
+     "mean": -8.11,
+     "median": -8.43,
+     "std": 2.011,
+     "min": -10.498,
+     "max": 5.547
+    }
+   },
+   "compression_tests": {
+    "std_ratio_EN_over_AR": 0.671,
+    "bootstrap_std_ratio": {
+     "median": 0.666,
+     "ci95": [
+      0.441,
+      0.977
+     ],
+     "significant_compression": false
+    },
+    "levene_BF": {
+     "W": 8.542,
+     "p": 0.003598,
+     "variances_differ": true
+    },
+    "fligner_killeen": {
+     "stat": 17.527,
+     "p": 2.833e-05,
+     "scale_differs": true
+    },
+    "mean_gap_EN_minus_AR": 0.183,
+    "bootstrap_mean_gap": {
+     "median": 0.183,
+     "ci95": [
+      0.062,
+      0.311
+     ]
+    },
+    "welch_t_means": {
+     "t": 2.88,
+     "p": 0.004134,
+     "arabic_lower": true
+    },
+    "mann_whitney_u": {
+     "U": 52284.0,
+     "p": 0.04065
+    },
+    "cohens_d_means": 0.232
+   }
+  },
+  "cosine_miniLM": {
+   "self_match_relevant": {
+    "arabic": {
+     "n": 309,
+     "mean": 0.735,
+     "median": 0.779,
+     "std": 0.159,
+     "min": 0.092,
+     "max": 1.0
+    },
+    "english": {
+     "n": 309,
+     "mean": 0.762,
+     "median": 0.777,
+     "std": 0.113,
+     "min": 0.399,
+     "max": 1.0
+    }
+   },
+   "cross_doc_irrelevant": {
+    "arabic": {
+     "n": 309,
+     "mean": 0.167,
+     "median": 0.152,
+     "std": 0.121,
+     "min": -0.061,
+     "max": 0.681
+    },
+    "english": {
+     "n": 309,
+     "mean": 0.135,
+     "median": 0.123,
+     "std": 0.128,
+     "min": -0.184,
+     "max": 0.626
+    }
+   },
+   "compression_tests": {
+    "std_ratio_EN_over_AR": 0.709,
+    "bootstrap_std_ratio": {
+     "median": 0.709,
+     "ci95": [
+      0.628,
+      0.801
+     ],
+     "significant_compression": false
+    },
+    "levene_BF": {
+     "W": 17.366,
+     "p": 3.524e-05,
+     "variances_differ": true
+    },
+    "fligner_killeen": {
+     "stat": 13.091,
+     "p": 0.0002967,
+     "scale_differs": true
+    },
+    "mean_gap_EN_minus_AR": 0.027,
+    "bootstrap_mean_gap": {
+     "median": 0.027,
+     "ci95": [
+      0.005,
+      0.048
+     ]
+    },
+    "welch_t_means": {
+     "t": 2.409,
+     "p": 0.01633,
+     "arabic_lower": true
+    },
+    "mann_whitney_u": {
+     "U": 49520.0,
+     "p": 0.4228
+    },
+    "cohens_d_means": 0.194
+   }
+  },
+  "cosine_LaBSE": {
+   "self_match_relevant": {
+    "arabic": {
+     "n": 309,
+     "mean": 0.704,
+     "median": 0.716,
+     "std": 0.093,
+     "min": 0.289,
+     "max": 1.0
+    },
+    "english": {
+     "n": 309,
+     "mean": 0.667,
+     "median": 0.65,
+     "std": 0.113,
+     "min": 0.406,
+     "max": 1.0
+    }
+   },
+   "cross_doc_irrelevant": {
+    "arabic": {
+     "n": 309,
+     "mean": 0.16,
+     "median": 0.159,
+     "std": 0.084,
+     "min": -0.031,
+     "max": 0.417
+    },
+    "english": {
+     "n": 309,
+     "mean": 0.153,
+     "median": 0.145,
+     "std": 0.082,
+     "min": -0.038,
+     "max": 0.514
+    }
+   },
+   "compression_tests": {
+    "std_ratio_EN_over_AR": 1.218,
+    "bootstrap_std_ratio": {
+     "median": 1.217,
+     "ci95": [
+      1.059,
+      1.406
+     ],
+     "significant_compression": true
+    },
+    "levene_BF": {
+     "W": 15.542,
+     "p": 8.996e-05,
+     "variances_differ": true
+    },
+    "fligner_killeen": {
+     "stat": 16.806,
+     "p": 4.139e-05,
+     "scale_differs": true
+    },
+    "mean_gap_EN_minus_AR": -0.037,
+    "bootstrap_mean_gap": {
+     "median": -0.037,
+     "ci95": [
+      -0.053,
+      -0.021
+     ]
+    },
+    "welch_t_means": {
+     "t": -4.456,
+     "p": 9.997e-06,
+     "arabic_lower": false
+    },
+    "mann_whitney_u": {
+     "U": 35110.0,
+     "p": 1.263e-08
+    },
+    "cohens_d_means": -0.358
+   }
+  }
+ },
+ "query_variants_cross_encoder": {
+  "head12": {
+   "arabic_std": 0.928,
+   "english_std": 0.623,
+   "std_ratio_EN_over_AR": 0.671,
+   "levene_p": 0.003598,
+   "boot_ci95": [
+    0.441,
+    0.977
+   ],
+   "mean_gap_EN_minus_AR": 0.183
+  },
+  "head6": {
+   "arabic_std": 2.562,
+   "english_std": 2.615,
+   "std_ratio_EN_over_AR": 1.021,
+   "levene_p": 0.9049,
+   "boot_ci95": [
+    0.855,
+    1.216
+   ],
+   "mean_gap_EN_minus_AR": 0.099
+  },
+  "mid12": {
+   "arabic_std": 5.444,
+   "english_std": 5.423,
+   "std_ratio_EN_over_AR": 0.996,
+   "levene_p": 0.7475,
+   "boot_ci95": [
+    0.904,
+    1.094
+   ],
+   "mean_gap_EN_minus_AR": 1.036
+  }
+ },
+ "tokenization_fertility": {
+  "arabic_tokens_per_word": 2.04,
+  "english_tokens_per_word": 1.551,
+  "arabic_over_english": 1.32
+ }
+}
