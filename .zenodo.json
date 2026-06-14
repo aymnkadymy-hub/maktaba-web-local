@@ -23,5 +23,5 @@
     "offline / on-device AI",
     "relevance calibration"
   ],
-  "notes": "Code is MIT-licensed; the papers (paper/ and papers/) are CC BY 4.0. Replace the GitHub URL placeholders in CITATION.cff and the papers' Data & Code Availability sections after the repository is published."
+  "notes": "Code is MIT-licensed; the papers (paper/ and papers/) are CC BY 4.0. Repository: https://github.com/aymnkadymy-hub/maktaba-web-local . Add the per-paper arXiv IDs to each paper's Data & Code Availability section once minted."
 }

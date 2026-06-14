@@ -16,8 +16,8 @@ authors:
     affiliation: "Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq"
     email: kazimayemn@gmail.com
 license: MIT
-repository-code: "https://github.com/USERNAME/maktaba-web-local"   # TODO: replace USERNAME after creating the GitHub repo
-url: "https://github.com/USERNAME/maktaba-web-local"
+repository-code: "https://github.com/aymnkadymy-hub/maktaba-web-local"   # TODO: replace aymnkadymy-hub after creating the GitHub repo
+url: "https://github.com/aymnkadymy-hub/maktaba-web-local"
 version: "1.0.0"
 date-released: "2026-06-14"
 keywords:
