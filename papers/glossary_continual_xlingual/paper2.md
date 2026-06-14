@@ -42,7 +42,7 @@ We do **not** claim that dictionary-based CLIR or query expansion is novel — b
 
 ### 1.4 Reproducibility
 
-Every number is produced by deterministic scripts (`exp_p2_glossary.py` for the cross-script and continual results, `exp_p2b_ablation.py` for the glossary-size ablation, and `exp_p2c_labse.py` for the dense baselines) run by the author on the real corpus, using the system's own glossary (`cross_lingual_terms`), Arabic normaliser, and the bm25s engine [13]. Cross-script queries and their target books are a fixed, human-authored labelled set; the continual-learning probe uses fixed held-out terms verified absent from the static glossary, and acquisition writes the same in-memory entry the deployed `learn_term` produces — a prefix-stripped key and the *head word* of the one-off translation (e.g., اللوجستي → `logistic`) — without modifying the released lexicon. A reader pointing the script at the same corpus obtains the same recall figures.
+Every number is produced by deterministic scripts (`exp_p2_glossary.py` for the cross-script and continual results, `exp_p2b_ablation.py` for the glossary-size ablation, and `exp_p2c_labse.py` for the dense baselines) run by the author on the real corpus, using the system's own glossary (`cross_lingual_terms`), Arabic normaliser, and the bm25s engine [13]. Cross-script queries and their target books are a fixed, human-authored labelled set; the continual-learning probe uses fixed held-out terms verified absent from the static glossary, and acquisition writes the same in-memory entry the deployed `learn_term` produces — a prefix-stripped key and the *head word* of the one-off translation (e.g., al-lujisti → `logistic`) — without modifying the released lexicon. A reader pointing the script at the same corpus obtains the same recall figures.
 
 ## 2. Related Work
 
@@ -54,7 +54,7 @@ CLIR addresses the query/document language mismatch, classically by translating 
 
 ### 2.2 Query expansion
 
-Additive query expansion to grow recall is among the oldest techniques in IR, from Rocchio's relevance feedback [19] to relevance-based language models such as RM3 [10]. Our expansion is a *lexical, cross-lingual, precomputed* analogue: it adds other-language equivalents rather than same-language reweighted terms, it requires no per-query feedback round-trip, and it adds no scoring overhead — properties that matter on a CPU edge device. We inherit the recall-only character (a term not in the glossary simply is not expanded; precision is protected downstream by the reranker).
+Additive query expansion to grow recall is among the oldest techniques in IR, from Rocchio's relevance feedback [19] to relevance-based language models [10] and their later variants such as RM3. Our expansion is a *lexical, cross-lingual, precomputed* analogue: it adds other-language equivalents rather than same-language reweighted terms, it requires no per-query feedback round-trip, and it adds no scoring overhead — properties that matter on a CPU edge device. We inherit the recall-only character (a term not in the glossary simply is not expanded; precision is protected downstream by the reranker).
 
 ### 2.3 Bilingual lexicon induction
 
@@ -62,7 +62,7 @@ A body of work *learns* bilingual dictionaries automatically: MUSE aligns monoli
 
 ### 2.4 Multilingual dense retrieval
 
-The standard alternative to a lexical cross-script bridge is a multilingual dense retriever that embeds queries and passages of all languages into one space [9, 7], evaluated on benchmarks such as MIRACL [21]. We pre-empt the "just use a multilingual encoder" objection by *measuring* it (§6.6): on our cross-script set both a small on-device encoder and a heavy one (LaBSE [7]) reach book-level recall 1.0 — the dense path crosses scripts unaided, and even the small deployed encoder suffices at this granularity. We therefore do **not** position the glossary as a competitor to dense retrieval. Its role is narrower and cheaper: it repairs the *lexical* half of the hybrid retriever (BM25 from 0.0 to 1.0) at ~48 µs and no model, so for a cross-script query BM25 contributes real candidates to the Reciprocal-Rank-Fusion pool and the reranker instead of nothing; it is interpretable and editable; and it carries the continual-learning loop. Recent work also reports that cross-lingual retrieval is *especially* hard between different scripts [14], so a near-free lexical complement is worth having — particularly where a dense encoder is unavailable, too aggressively quantized to cross scripts, or evaluated at a stricter granularity than book level.
+The standard alternative to a lexical cross-script bridge is a multilingual dense retriever that embeds queries and passages of all languages into one space [9, 7], evaluated on benchmarks such as MIRACL [21]. We pre-empt the "just use a multilingual encoder" objection by *measuring* it (§6.6): on our cross-script set both a small on-device encoder and a heavy one (LaBSE [7]) reach book-level recall 1.0 — the dense path crosses scripts unaided, and even the small deployed encoder suffices at this granularity. We therefore do **not** position the glossary as a competitor to dense retrieval. Its role is narrower and cheaper: it repairs the *lexical* half of the hybrid retriever (BM25 from 0.0 to 1.0) at ~48 µs and no model, so for a cross-script query BM25 contributes real candidates to the RRF pool and the reranker instead of nothing; it is interpretable and editable; and it carries the continual-learning loop. Recent work also reports that cross-lingual retrieval is *especially* hard between different scripts [14], so a near-free lexical complement is worth having — particularly where a dense encoder is unavailable, too aggressively quantized to cross scripts, or evaluated at a stricter granularity than book level.
 
 ### 2.5 Continual learning and continual retrieval
 
@@ -74,7 +74,7 @@ The combination we occupy — deterministic dictionary expansion, *continually a
 
 ## 3. Problem Formulation
 
-A tenant owns a corpus `C` of passages, each in a language `ℓ(c) ∈ {ar, en}`. A query `q` has language `ℓ(q)`. The relevant passages for `q` may be in either language; in particular the *only* relevant passages may satisfy `ℓ(c) ≠ ℓ(q)` (a cross-script need). The lexical retriever scores `BM25(q, c)`, which depends on shared surface tokens after normalization. For `ℓ(c) ≠ ℓ(q)` with disjoint scripts, the token overlap is essentially empty, so `BM25(q, c) ≈ 0` and cross-script recall through the lexical path is ≈ 0 by construction.
+A tenant owns a corpus `C` of passages, each in a language `L(c) ∈ {ar, en}`. A query `q` has language `L(q)`. The relevant passages for `q` may be in either language; in particular the *only* relevant passages may satisfy `L(c) ≠ L(q)` (a cross-script need). The lexical retriever scores `BM25(q, c)`, which depends on shared surface tokens after normalization. For `L(c) ≠ L(q)` with disjoint scripts, the token overlap is essentially empty, so `BM25(q, c) ≈ 0` and cross-script recall through the lexical path is ≈ 0 by construction.
 
 Let `D : term → term` be a bilingual glossary (a partial map in both directions). The expansion operator augments the query with the images of its known terms:
 `expand(q) = q ⊕ { D(w) : w ∈ terms(q), w ∈ dom(D) }`,
@@ -105,7 +105,7 @@ On query q from a tenant:
 1  results ← retrieve(expand(q))            # deterministic glossary expansion first
 2  if results ≠ ∅: return results            # same-language (or already-known) hit — no model
 3  # same-language miss → the one-off escape hatch becomes a teacher
-4  if q is a short, single-term query in language ℓ(q):
+4  if q is a short, single-term query in language L(q):
 5      t ← LLM_translate(q)                  # the ONLY model call; cached, timeout-bounded
 6      learn_term( strip_prefix(head(q)) → head(t) )  # prefix-stripped key → head word of t
 7  return retrieve( translate-and-retry(q) ) # resolve THIS query via the fallback
@@ -119,7 +119,11 @@ The system's behaviour on cross-script queries improves monotonically over its l
 
 ## 5. System and Implementation
 
-The glossary layer is part of `maktaba-web-local`'s hybrid retriever. `prepare_query` normalizes the query and appends `cross_lingual_terms(q)` before both the BM25 and the dense search, so a known cross-script term reaches passages in the other language through *both* paths; Reciprocal Rank Fusion [5] then merges the lexical and dense rankings and the cross-encoder reranks. The acquisition hook lives in the conditional translation path `_translate_query`: when a short single-term query is translated to resolve a same-language miss, `learn_term` is called with the normalized source term and the translation, persisting the pair. The learned lexicon is loaded once at startup and consulted on every subsequent query at no model cost. The whole layer runs on CPU; the only component that touches the language model is the rare, cached, timeout-bounded translation that also seeds learning, and the system degrades gracefully (it simply skips expansion) if the model is unavailable.
+The glossary layer is part of `maktaba-web-local`'s hybrid retriever (Figure 3). `prepare_query` normalizes the query and appends `cross_lingual_terms(q)` before both the BM25 and the dense search, so a known cross-script term reaches passages in the other language through *both* paths; Reciprocal Rank Fusion (RRF) [5] then merges the lexical and dense rankings and the cross-encoder reranks. The acquisition hook lives in the conditional translation path `_translate_query`: when a short single-term query is translated to resolve a same-language miss, `learn_term` is called with the normalized source term and the translation, persisting the pair. The learned lexicon is loaded once at startup and consulted on every subsequent query at no model cost. The whole layer runs on CPU; the only component that touches the language model is the rare, cached, timeout-bounded translation that also seeds learning, and the system degrades gracefully (it simply skips expansion) if the model is unavailable.
+
+![Figure 3 — System architecture of the `maktaba-web-local` hybrid retriever: `prepare_query` applies Arabic normalization and glossary cross-script expansion, BM25 (bm25s) and FAISS dense (MiniLM) retrieve in parallel, Reciprocal Rank Fusion merges the rankings, a cross-encoder reranks, and a self-calibrating relevance gate filters; the conditional cross-lingual fallback translates and retries once on a same-language miss and seeds the learned glossary.](figures/fig_architecture.png)
+
+**Figure 3.** System architecture of the `maktaba-web-local` hybrid retriever: `prepare_query` applies Arabic normalization and glossary cross-script expansion, BM25 (bm25s) and FAISS dense (MiniLM) retrieve in parallel, Reciprocal Rank Fusion merges the rankings, a cross-encoder reranks, and a self-calibrating relevance gate filters; the conditional cross-lingual fallback translates and retries once on a same-language miss and seeds the learned glossary.
 
 ## 6. Evaluation
 
@@ -127,9 +131,9 @@ The glossary layer is part of `maktaba-web-local`'s hybrid retriever. `prepare_q
 
 **Corpus.** We evaluate on the dominant tenant of the real deployed library, which owns both English books (machine learning, economics, AI-search, scientific publishing, databases, physics) and Arabic books (programming basics, partial fractions) — the bilingual mix that creates genuine cross-script needs.
 
-**Cross-script query set.** A fixed, human-authored labelled set of nine queries whose relevant book is in the *other* language: six Arabic→English queries (e.g., "الشبكة العصبية التوليدية" → the generative-deep-learning book; "الحوافز الاقتصادية" → the economics book; "النشر العلمي ومعامل التأثير" → the scientific-publishing book) and three English→Arabic queries (e.g., "partial fractions" → الكسور الجزئيه; "programming variable and function" → اساسيات البرمجة). A query *hits* if any passage of its target book appears in the top-10.
+**Cross-script query set.** A fixed, human-authored labelled set of nine queries whose relevant book is in the *other* language: six Arabic→English queries (e.g., "al-shabaka al-asabiyya al-tawlidiyya" → the generative-deep-learning book; "al-hawafiz al-iqtisadiyya" → the economics book; "al-nashr al-ilmi wa-muamil al-tathir" → the scientific-publishing book) and three English→Arabic queries (e.g., "partial fractions" → al-kusur al-juziyya; "programming variable and function" → asasiyat al-barmaja). A query *hits* if any passage of its target book appears in the top-10.
 
-**Continual-learning probe.** Three single-term Arabic queries whose translations are absent from the static glossary and whose English equivalents are distinctive to a target book — "الانتروبيا" (entropy), "الكامن" (latent), "اللوجستي" (logistic) — each verified absent from the static map. (The deployed acquisition persists a prefix-stripped key and the *head word* of the one-off translation, so "اللوجستي" is stored as `logistic`; we replicate that exactly.) We measure book-level recall before learning and after one-shot acquisition of each pair.
+**Continual-learning probe.** Three single-term Arabic queries whose translations are absent from the static glossary and whose English equivalents are distinctive to a target book — "al-intrubiya" (entropy), "al-kamin" (latent), "al-lujisti" (logistic) — each verified absent from the static map. (The deployed acquisition persists a prefix-stripped key and the *head word* of the one-off translation, so "al-lujisti" is stored as `logistic`; we replicate that exactly.) We measure book-level recall before learning and after one-shot acquisition of each pair.
 
 ### 6.2 The static glossary turns the cross-script floor into a ceiling
 
@@ -141,9 +145,11 @@ The glossary layer is part of `maktaba-web-local`'s hybrid retriever. `prepare_q
 | English → Arabic | 3 | 1.00 | 1.00 |
 | **Overall** | 9 | 0.333 | **1.000** |
 
-For Arabic→English the unexpanded lexical recall is **exactly zero** — the cross-script floor for lexical retrieval, since no Arabic query token can match an English passage — and glossary expansion lifts it to **1.0**: every Arabic query, once augmented with the English equivalents of its terms, retrieves its English target book. The English→Arabic direction is already at 1.0 *without* the glossary, and this is the honest asymmetry of the result: Arabic technical books embed English terms verbatim (code identifiers, formulae, transliterated loanwords such as "variable", "function", "partial fractions"), so an English query already matches them lexically, whereas English books contain no Arabic. We report this rather than average it away: the glossary's measured lift is concentrated where the cross-script floor is genuinely zero (Arabic→English), and is redundant where the corpus already provides a lexical bridge (English→Arabic). The overall recall rises from 0.333 to 1.0.
+For Arabic→English the unexpanded lexical recall is **exactly zero** — the cross-script floor for lexical retrieval, since no Arabic query token can match an English passage — and glossary expansion lifts it to **1.0**: every Arabic query, once augmented with the English equivalents of its terms, retrieves its English target book. The English→Arabic direction is already at 1.0 *without* the glossary, and this is the honest asymmetry of the result: Arabic technical books embed English terms verbatim (code identifiers, formulae, transliterated loanwords such as "variable", "function", "partial fractions"), so an English query already matches them lexically, whereas English books contain no Arabic. We report this rather than average it away: the glossary's measured lift is concentrated where the cross-script floor is genuinely zero (Arabic→English), and is redundant where the corpus already provides a lexical bridge (English→Arabic). The overall recall rises from 0.333 to 1.0 (see Figure 1).
 
-![Glossary expansion lifts cross-script book-level recall@10: Arabic→English from 0.0 to 1.0; English→Arabic is already bridged by embedded English terms.](figures/fig1_crossscript_recall.png)
+![Figure 1 — Glossary expansion lifts cross-script book-level recall@10: Arabic→English from 0.0 to 1.0; English→Arabic is already bridged by embedded English terms.](figures/fig1_crossscript_recall.png)
+
+**Figure 1.** Glossary expansion lifts cross-script book-level recall@10: Arabic→English from 0.0 to 1.0; English→Arabic is already bridged by embedded English terms.
 
 ### 6.3 Continual acquisition recovers held-out terms in one shot
 
@@ -152,11 +158,13 @@ For Arabic→English the unexpanded lexical recall is **exactly zero** — the c
 | Stage | recall | detail |
 |-------|:------:|--------|
 | Before learning (term absent from glossary) | 0.00 | all three Arabic queries miss their English target |
-| After one-shot acquisition | **1.00** | "الانتروبيا"→entropy, "الكامن"→latent, "اللوجستي"→logistic each now retrieve the target |
+| After one-shot acquisition | **1.00** | "al-intrubiya"→entropy, "al-kamin"→latent, "al-lujisti"→logistic each now retrieve the target |
 
-Before acquisition, the three held-out Arabic terms produce no expansion (they are absent from the static glossary) and the Arabic queries miss their English target books entirely. After a single acquisition per term — the one-off translation that the system's fallback would invoke on the miss, persisted by `learn_term` — every query retrieves its target, and does so *deterministically and model-free* on every subsequent query. This is the continual loop in miniature: a miss today becomes a permanent, zero-cost cross-script bridge tomorrow.
+Before acquisition, the three held-out Arabic terms produce no expansion (they are absent from the static glossary) and the Arabic queries miss their English target books entirely. After a single acquisition per term — the one-off translation that the system's fallback would invoke on the miss, persisted by `learn_term` — every query retrieves its target, and does so *deterministically and model-free* on every subsequent query. This is the continual loop in miniature: a miss today becomes a permanent, zero-cost cross-script bridge tomorrow (see Figure 2).
 
-![Held-out continual-learning probe: recall@10 rises from 0.0 to 1.0 after a single one-shot acquisition per term.](figures/fig2_continual_learning.png)
+![Figure 2 — Held-out continual-learning probe: recall@10 rises from 0.0 to 1.0 after a single one-shot acquisition per term.](figures/fig2_continual_learning.png)
+
+**Figure 2.** Held-out continual-learning probe: recall@10 rises from 0.0 to 1.0 after a single one-shot acquisition per term.
 
 ### 6.4 Glossary-size ablation: graceful scaling
 
@@ -187,9 +195,11 @@ Dense retrievers cross scripts through a shared embedding space, so the obvious 
 | BM25, no glossary | 0.00 | 1.00 | ~µs | none |
 | **BM25 + glossary (this paper)** | **1.00** | 1.00 | +48 µs | none (308/280-pair map) |
 | Dense — MiniLM (small, deployed) | 1.00 | 1.00 | ~16 ms/query | ~118 M |
-| Dense — LaBSE (heavy) | 1.00 | 1.00 | ~22 ms/query | ~471 M / 1.8 GB |
+| Dense — LaBSE (heavy) | 1.00 | 1.00 | ~22 ms/query | ~471 M / ~1.8 GB |
 
-The honest result is that **all three cross-script methods reach book-level recall 1.0**; only lexical-only BM25 sits at the structural floor of 0.0. Two consequences, stated plainly. First, the glossary is **not** the sole way to cross scripts — the dense path does so on its own, and even the *small* deployed encoder suffices at this granularity, with the heavy 1.8 GB LaBSE buying *no* book-level gain over it; we make no claim that the glossary beats dense retrieval. Second, what the glossary *does* contribute is precise and cheap: it repairs the **lexical half** of the hybrid retriever — BM25 goes 0.0→1.0, so a cross-script query yields real candidates to the RRF fusion pool and the reranker rather than nothing — at **~48 µs and no model**, versus a per-query dense encode (16–22 ms) over a model that must also embed and index the entire corpus (here 92 s and 453 s respectively). With the continual loop (§4.2) and its interpretability/editability, the glossary is best read as a near-free lexical complement on the cost/accuracy frontier. We flag the converse honestly: **at this lenient book-level metric the glossary's *net* benefit over dense-alone is nil** — its distinctive value lies in the fusion contribution, in interpretability/editability, and in settings (passage-level granularity, dense-unavailable or heavily-quantized devices) that this small benchmark does not isolate.
+*One-time corpus embedding-and-indexing cost (not per-query): ~92 s for MiniLM and ~453 s for LaBSE; the lexical methods require no such step.*
+
+The honest result is that **all three cross-script methods reach book-level recall 1.0**; only lexical-only BM25 sits at the structural floor of 0.0. Two consequences, stated plainly. First, the glossary is **not** the sole way to cross scripts — the dense path does so on its own, and even the *small* deployed encoder suffices at this granularity, with the heavy 1.8 GB LaBSE buying *no* book-level gain over it; we make no claim that the glossary beats dense retrieval. Second, what the glossary *does* contribute is precise and cheap: it repairs the **lexical half** of the hybrid retriever — BM25 goes 0.0→1.0, so a cross-script query yields real candidates to the RRF pool and the reranker rather than nothing — at **~48 µs and no model**, versus a per-query dense encode (16–22 ms) over a model that must also embed and index the entire corpus (here 92 s and 453 s respectively). With the continual loop (§4.2) and its interpretability/editability, the glossary is best read as a near-free lexical complement on the cost/accuracy frontier. We flag the converse honestly: **at this lenient book-level metric the glossary's *net* benefit over dense-alone is nil** — its distinctive value lies in the fusion contribution, in interpretability/editability, and in settings (passage-level granularity, dense-unavailable or heavily-quantized devices) that this small benchmark does not isolate.
 
 ## 7. Discussion, Limitations, and Threats to Validity
 

@@ -1,0 +1,6 @@
+\usepackage{fontspec}
+% Automatic Arabic-glyph fallback for inline Arabic inside Latin text (lualatex + harfbuzz)
+\directlua{luaotfload.add_fallback("arfallback",{"Noto Sans Arabic:mode=harf;","Noto Naskh Arabic:mode=harf;"})}
+\setmainfont{DejaVu Serif}[RawFeature={fallback=arfallback}]
+\setsansfont{DejaVu Sans}[RawFeature={fallback=arfallback}]
+\setmonofont{DejaVu Sans Mono}[RawFeature={fallback=arfallback}]
