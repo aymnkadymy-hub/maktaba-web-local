@@ -2,7 +2,7 @@
 
 ## A full, detailed, non-technical retelling of everything the system is and does
 
-**Author:** Ayman Kazim Yousef · Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq · ORCID 0009-0006-7409-9367 · kazimayemn@gmail.com
+**Author:** Ayman Kazim Yousef · Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq · ORCID 0009-0006-7409-9367 · ai25009@student.alsafwa.edu.iq
 
 > This document explains **maktaba-web-local** end to end, every part, in plain language — what it is, the problem it solves, how each piece works, why each choice was made, what is genuinely new versus standard, the experiments and their numbers, and where it honestly stops. It is written so a motivated non-specialist can follow it, while staying faithful to the real code. Figures are in `figures/`. Sources are listed where claims rest on outside work. It is the companion to the three research papers in `~/Desktop/14-6/` and to the algorithm catalog at `~/Desktop/maktaba_web_local_Algorithms_Catalog.md`.
 >

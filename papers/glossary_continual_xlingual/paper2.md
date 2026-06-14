@@ -2,7 +2,7 @@
 
 **Ayman Kazim Yousef**
 Undergraduate Student, Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq
-ORCID: 0009-0006-7409-9367 · kazimayemn@gmail.com
+ORCID: 0009-0006-7409-9367 · ai25009@student.alsafwa.edu.iq
 
 **Keywords:** cross-lingual information retrieval; query expansion; bilingual lexicon; continual learning; on-device retrieval; Arabic–English
 

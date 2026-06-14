@@ -1,7 +1,9 @@
 {
-  "title": "maktaba-web-local — The Speaking Library (المكتبة الناطقة): offline multilingual RAG with a label-free per-tenant relevance gate",
   "upload_type": "software",
-  "description": "<p>A fully offline, on-device, privacy-preserving, multilingual (Arabic + English) personal digital library with retrieval-augmented question answering. Its central contribution is an unsupervised, label-free, per-tenant <em>self-calibrating relevance gate</em>. This archive bundles the system code and four research artifacts: the flagship paper (per-tenant relevance gating with a conditional cross-lingual fallback) and three companion papers on (1) sparse-retrieval multi-tenant starvation and a per-tenant sub-index remedy, (2) a self-extending bilingual glossary for continual, label-free cross-script retrieval, and (3) safe deterministic post-hoc Modern-Standard-Arabic&rarr;Iraqi dialect rewriting. Every reported number is produced by deterministic experiment scripts included under <code>papers/experiments/</code> and <code>paper_experiments/</code>. The private evaluation corpus (user-owned books) is not redistributed.</p>",
+  "title": "maktaba-web-local: Self-Calibrating Per-Tenant Relevance Gating for Offline Multilingual RAG",
+  "version": "v1.0.1",
+  "access_right": "open",
+  "license": "MIT",
   "creators": [
     {
       "name": "Yousef, Ayman Kazim",
@@ -9,19 +11,18 @@
       "affiliation": "Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq"
     }
   ],
-  "access_right": "open",
-  "license": "MIT",
   "keywords": [
     "retrieval-augmented generation",
-    "information retrieval",
-    "multi-tenant retrieval",
-    "BM25",
-    "cross-lingual information retrieval",
-    "continual learning",
-    "Arabic natural language processing",
-    "Iraqi dialect",
-    "offline / on-device AI",
-    "relevance calibration"
+    "relevance gating",
+    "per-tenant calibration",
+    "unsupervised thresholding",
+    "cross-lingual fallback",
+    "on-device RAG",
+    "multilingual information retrieval",
+    "Arabic NLP",
+    "cross-encoder reranking",
+    "hybrid retrieval",
+    "privacy-preserving"
   ],
-  "notes": "Code is MIT-licensed; the papers (paper/ and papers/) are CC BY 4.0. Repository: https://github.com/aymnkadymy-hub/maktaba-web-local . Add the per-paper arXiv IDs to each paper's Data & Code Availability section once minted."
+  "description": "A retrieval-augmented generation (RAG) system must decide, after retrieval and reranking, whether any candidate passage is relevant enough to ground an answer; otherwise it should answer from the model's general knowledge rather than forcing an off-topic document into the prompt. In practice this rests on a single hand-tuned global score cutoff, which is brittle: a reranker's score distribution shifts with the corpus, the language (multilingual cross-encoders score equally-relevant Arabic passages lower than English ones), and — in a multi-tenant system where every user owns a different private library — the tenant. We present an unsupervised, label-free, per-tenant self-calibrating relevance gate for the post-reranking stage of an offline, on-device, multilingual (Arabic+English) digital-library RAG system. The threshold is derived entirely from the relevance scorer's own score geometry — an in-domain self-match anchor versus a cross-document out-domain anchor — so it requires no user feedback, training, reward, or labeled evaluation set, works cold-start, and is computed on-device from local data only. A conditional cross-lingual fallback translates the query exactly once, only on a calibrated same-language miss. On a real 3,739-chunk, 10-book corpus on CPU, the label-free gate reaches F1 0.968 versus 0.828 for the deployable fixed default (precision 0.71→0.94, recall 1.0). The system and experiment scripts are released for reproduction. This archive also includes three companion papers (multi-tenant sparse-retrieval starvation; a continual label-free cross-script glossary; safe deterministic Iraqi-dialect rewriting). Code is MIT-licensed; the papers and prose are CC BY 4.0. The private evaluation corpus (user-owned books) is not redistributed."
 }

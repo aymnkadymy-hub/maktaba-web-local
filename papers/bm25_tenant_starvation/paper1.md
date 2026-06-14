@@ -2,7 +2,7 @@
 
 **Ayman Kazim Yousef**
 Undergraduate Student, Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq
-ORCID: 0009-0006-7409-9367 · kazimayemn@gmail.com
+ORCID: 0009-0006-7409-9367 · ai25009@student.alsafwa.edu.iq
 
 **Keywords:** multi-tenant retrieval; BM25; sparse retrieval; metadata filtering; retrieval-augmented generation; collection statistics
 

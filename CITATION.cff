@@ -1,65 +1,61 @@
 cff-version: 1.2.0
-message: "If you use this software or its companion papers, please cite it as below."
-title: "maktaba-web-local — The Speaking Library (المكتبة الناطقة)"
-abstract: >-
-  A fully offline, on-device, privacy-preserving, multilingual (Arabic + English)
-  personal digital library with retrieval-augmented question answering and a
-  label-free, per-tenant self-calibrating relevance gate. This repository
-  accompanies one flagship paper and three companion papers on multi-tenant
-  sparse-retrieval starvation, continual cross-script glossary learning, and safe
-  deterministic Iraqi-dialect rewriting.
+title: "maktaba-web-local: Self-Calibrating Per-Tenant Relevance Gating for Offline Multilingual RAG"
+message: "If you use this software or its results, please cite it as below."
 type: software
 authors:
-  - given-names: "Ayman Kazim"
-    family-names: "Yousef"
+  - family-names: "Yousef"
+    given-names: "Ayman Kazim"
     orcid: "https://orcid.org/0009-0006-7409-9367"
     affiliation: "Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq"
-    email: kazimayemn@gmail.com
-license: MIT
+    email: "ai25009@student.alsafwa.edu.iq"
+version: "v1.0.1"
+date-released: "2026-06-14"
 repository-code: "https://github.com/aymnkadymy-hub/maktaba-web-local"
 url: "https://github.com/aymnkadymy-hub/maktaba-web-local"
-version: "1.0.0"
-date-released: "2026-06-14"
+license: MIT
 keywords:
   - retrieval-augmented generation
-  - information retrieval
-  - multi-tenant retrieval
-  - BM25
-  - cross-lingual information retrieval
+  - relevance gating
+  - per-tenant calibration
+  - on-device RAG
+  - multilingual information retrieval
   - Arabic NLP
-  - Iraqi dialect
-  - offline / on-device
-  - relevance calibration
+# identifiers:   # ← uncomment and fill once the Zenodo DOI is minted (see MAKTABA_BUILD_INFO.md)
+#   - type: doi
+#     value: "<<MAKTABA_ZENODO_DOI>>"
+#     description: "Concept DOI (all versions) of the software on Zenodo"
+preferred-citation:
+  type: article
+  title: "Self-Calibrating Per-Tenant Relevance Gating with a Conditional Cross-Lingual Fallback for Offline Multilingual RAG"
+  authors:
+    - family-names: "Yousef"
+      given-names: "Ayman Kazim"
+      orcid: "https://orcid.org/0009-0006-7409-9367"
+      affiliation: "Department of Artificial Intelligence Engineering, AlSafwa University, Karbala, Iraq"
+  year: 2026
+  # doi: "<<FLAGSHIP_PAPER_DOI>>"   # ← add once the paper is accepted / on arXiv
 references:
-  - type: article
-    title: "Self-Calibrating Per-Tenant Relevance Gating with a Conditional Cross-Lingual Fallback for Offline Multilingual RAG"
-    authors:
-      - given-names: "Ayman Kazim"
-        family-names: "Yousef"
-        orcid: "https://orcid.org/0009-0006-7409-9367"
-    year: 2026
-    notes: "Flagship paper (paper/)."
   - type: article
     title: "Sparse-Retrieval Tenant Starvation: A Lexical Post-Filtering Failure Mode in Shared-Index Multi-Tenant Retrieval, and a Per-Tenant Sub-Index Remedy"
     authors:
-      - given-names: "Ayman Kazim"
-        family-names: "Yousef"
+      - family-names: "Yousef"
+        given-names: "Ayman Kazim"
         orcid: "https://orcid.org/0009-0006-7409-9367"
     year: 2026
     notes: "Companion paper P1 (papers/bm25_tenant_starvation/)."
   - type: article
     title: "A Self-Extending Bilingual Glossary for Offline Cross-Script Retrieval: Continual, Label-Free Term Acquisition Without Model Weight Updates"
     authors:
-      - given-names: "Ayman Kazim"
-        family-names: "Yousef"
+      - family-names: "Yousef"
+        given-names: "Ayman Kazim"
         orcid: "https://orcid.org/0009-0006-7409-9367"
     year: 2026
     notes: "Companion paper P2 (papers/glossary_continual_xlingual/)."
   - type: article
     title: "Safe Deterministic Post-Hoc Dialect Rewriting: Turning Modern-Standard-Arabic Language-Model Output into Iraqi Arabic Without Corrupting the Text"
     authors:
-      - given-names: "Ayman Kazim"
-        family-names: "Yousef"
+      - family-names: "Yousef"
+        given-names: "Ayman Kazim"
         orcid: "https://orcid.org/0009-0006-7409-9367"
     year: 2026
     notes: "Companion paper P3 (papers/iraqi_dialect_rag/)."
